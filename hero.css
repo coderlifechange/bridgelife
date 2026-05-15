@@ -1,0 +1,494 @@
+
+:root {
+    /* Color Palette */
+    --bridge-life-content-primary: #ed0d0d;
+    --bridge-life-content-primary-hover: #0045A8;
+    --bridge-life-content-secondary: #0A1D37;
+    --bridge-life-content-text: #4A5568;
+    --bridge-life-content-text-light: #718096;
+    --bridge-life-content-white: #FFFFFF;
+    --bridge-life-content-bg-light: #F8FAFC;
+    --bridge-life-content-border: #E2E8F0;
+
+    /* Layout & Spacing */
+    --bridge-life-content-container-max: 1320px;
+    --bridge-life-content-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Shadows */
+    --bridge-life-content-shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+    --bridge-life-content-shadow-md: 0 10px 20px -5px rgba(0,0,0,0.08);
+    --bridge-life-content-shadow-lg: 0 20px 40px -10px rgba(0,0,0,0.12);
+}
+
+
+
+.bridge-life-content-body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--bridge-life-content-text);
+    background-color: var(--bridge-life-content-white);
+}
+
+.bridge-life-content-container {
+    max-width: var(--bridge-life-content-container-max);
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.bridge-life-content-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top right, #F8FAFC 0%, #FFFFFF 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.bridge-life-content-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.bridge-life-content-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border: none;
+    box-shadow: none;
+    position: relative;
+    transition: var(--bridge-life-content-transition);
+}
+
+/* Responsive Top Bar */
+@media (max-width: 1024px) {
+    .bridge-life-content-hero-top-inner {
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .bridge-life-content-hero-top-inner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .bridge-life-content-top-contact {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bridge-life-content-hero {
+        padding-top: 140px;
+    }
+}
+
+/* Blinking Point Removed */
+.bridge-life-content-badge::before {
+    display: none;
+}
+
+.bridge-life-content-badge span {
+    background: linear-gradient(90deg, var(--bridge-life-content-secondary) 0%, var(--bridge-life-content-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    position: relative;
+}
+
+/* Curved Dotted Line under "Trusted" */
+.bridge-life-content-trusted-text::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    border-bottom: 2px dotted var(--bridge-life-content-primary);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%; /* Curved downward arc */
+    opacity: 0.8;
+}
+
+.bridge-life-content-trusted-text {
+    position: relative;
+    display: inline-block;
+}
+
+.bridge-life-content-badge i {
+    display: none; /* Removed as requested */
+}
+
+.bridge-life-content-badge:hover {
+    transform: translateX(5px);
+}
+
+.bridge-life-content-hero-title {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-weight: 800;
+    color: var(--bridge-life-content-secondary);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.04em;
+}
+
+.bridge-life-content-highlight {
+    color: var(--bridge-life-content-primary);
+    position: relative;
+}
+
+.bridge-life-content-hero-description {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: var(--bridge-life-content-text);
+    margin-bottom: 40px;
+    max-width: 580px;
+    line-height: 1.7;
+}
+
+.bridge-life-content-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 56px;
+}
+
+/* 4. Buttons */
+.bridge-life-content-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--bridge-life-content-transition);
+    text-decoration: none;
+}
+
+.bridge-life-content-btn-primary {
+    background-color: var(--bridge-life-content-primary);
+    color: var(--bridge-life-content-white);
+    border: none;
+    box-shadow: 0 4px 14px rgba(0, 86, 210, 0.25);
+}
+
+.bridge-life-content-btn-primary:hover {
+    background-color: var(--bridge-life-content-primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 86, 210, 0.3);
+}
+
+.bridge-life-content-btn-outline {
+    background-color: transparent;
+    color: var(--bridge-life-content-secondary);
+    border: 2px solid var(--bridge-life-content-border);
+}
+
+.bridge-life-content-btn-outline:hover {
+    border-color: var(--bridge-life-content-primary);
+    color: var(--bridge-life-content-primary);
+    transform: translateY(-3px);
+    background-color: var(--bridge-life-content-bg-light);
+}
+
+/* 5. Destinations Bar */
+.bridge-life-content-plane-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bridge-life-content-plane-icon {
+    color: var(--bridge-life-content-primary);
+    width: 20px;
+    height: 20px;
+    animation: planeFly 3s ease-in-out infinite;
+}
+
+@keyframes planeFly {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(3px, -3px) rotate(10deg); }
+}
+
+.bridge-life-content-top-destinations {
+    border-top: 1px solid var(--bridge-life-content-border);
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    margin-top: 48px;
+}
+
+.bridge-life-content-destinations-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--bridge-life-content-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+}
+
+.bridge-life-content-destinations-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+@keyframes dashOffset {
+    from { stroke-dashoffset: 100; }
+    to { stroke-dashoffset: 0; }
+}
+
+.bridge-life-content-destination-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: var(--bridge-life-content-transition);
+}
+
+.bridge-life-content-destination-item img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--bridge-life-content-shadow-sm);
+    border: 2px solid var(--bridge-life-content-white);
+    transition: var(--bridge-life-content-transition);
+}
+
+.bridge-life-content-destination-item:hover img {
+    transform: scale(1.2) rotate(5deg);
+    border-color: var(--bridge-life-content-primary);
+    box-shadow: var(--bridge-life-content-shadow-md);
+}
+
+.bridge-life-content-destination-item span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--bridge-life-content-text-light);
+}
+
+/* 6. Visual Graphics */
+.bridge-life-content-hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bridge-life-content-visual-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Increased for a more "complete" fit on large screens */
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: none; /* Absolutely no movement */
+}
+
+.bridge-life-content-visual-bg-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%; /* Slightly larger for better fit */
+    height: 110%;
+    background: radial-gradient(circle, rgba(0, 86, 210, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    border: 1px solid rgba(0, 86, 210, 0.08);
+    border-radius: 50%;
+    z-index: 0;
+    transition: none;
+}
+
+.bridge-life-content-students-img {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.12));
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: none; /* Remove any potential transitions */
+}
+
+.bridge-life-content-visual-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bridge-life-content-visual-path path {
+    animation: dashOffset 15s linear infinite;
+}
+
+.bridge-life-content-landmark-item {
+    position: absolute;
+    opacity: 0.2;
+    color: var(--bridge-life-content-secondary);
+    z-index: 1;
+    transition: none; /* Ensure no movement */
+}
+
+.bridge-life-content-landmark-1 { top: 15%; left: -5%; width: 60px; height: 60px; }
+.bridge-life-content-landmark-2 { bottom: 10%; left: -10%; width: 100px; height: 100px; }
+.bridge-life-content-landmark-3 { top: 5%; right: -5%; width: 50px; height: 50px; }
+
+.bridge-life-content-plane-visual {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    color: var(--bridge-life-content-primary);
+    z-index: 10;
+    transform: rotate(15deg); 
+    animation: planeVisualFly 4s ease-in-out infinite;
+    transition: none; /* Ensure no movement from other transitions */
+}
+
+@keyframes planeVisualFly {
+    0%, 100% { transform: translate(0, 0) rotate(15deg); }
+    50% { transform: translate(-10px, -15px) rotate(20deg); }
+}
+
+/* 7. Animations */
+@keyframes premiumFadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bridge-life-content-hero-content > * {
+    animation: premiumFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.bridge-life-content-badge { animation-delay: 0.1s; }
+.bridge-life-content-hero-title { animation-delay: 0.2s; }
+.bridge-life-content-hero-description { animation-delay: 0.3s; }
+.bridge-life-content-hero-actions { animation-delay: 0.4s; }
+.bridge-life-content-top-destinations { animation-delay: 0.5s; }
+
+
+/* 8. Responsiveness */
+@media (max-width: 1200px) {
+    .bridge-life-content-hero-grid {
+        gap: 40px;
+    }
+    .bridge-life-content-hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bridge-life-content-hero {
+        padding: 60px 0;
+    }
+    .bridge-life-content-hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+    .bridge-life-content-hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bridge-life-content-hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bridge-life-content-hero-actions {
+        justify-content: center;
+    }
+    .bridge-life-content-destinations-path {
+        display: none; /* Hide bridge on stacked layout */
+    }
+    .bridge-life-content-top-destinations {
+        justify-content: center;
+        width: 100%;
+    }
+    .bridge-life-content-visual-container {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bridge-life-content-hero {
+        padding: 40px 0;
+    }
+    .bridge-life-content-hero-title {
+        font-size: 2.8rem;
+    }
+    .bridge-life-content-hero-actions {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        gap: 12px;
+        justify-content: center;
+    }
+    .bridge-life-content-btn {
+        flex: 1;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        justify-content: center;
+    }
+    .bridge-life-content-top-destinations {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .bridge-life-content-destinations-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .bridge-life-content-hero-title {
+        font-size: 2.2rem;
+    }
+    .bridge-life-content-badge {
+        font-size: 0.75rem;
+    }
+    .bridge-life-content-hero-actions {
+        gap: 8px;
+    }
+    .bridge-life-content-btn {
+        padding: 8px 10px;
+        font-size: 0.7rem;
+    }
+}
