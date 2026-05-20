@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const slides = [
         {
-            img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1200',
+            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/imagesqtbnand9gcsegequmoyvairrq-wdhtiq7p3reycwn.jpg',
             slogan: 'Bridge Life Excellence',
             title: 'Your Future Starts Here',
             desc: 'Join our comprehensive seminar on studying in Japan, Korea, and UK. Get expert counseling and visa guidance directly from our specialists.',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             targetDate: new Date('2026-06-20T20:00:00').getTime()
         },
         {
-            img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200',
+            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/imagesqtbnand9gctcf-xbfja6rxui-ynp6qj-muqovrn73.jpg',
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
