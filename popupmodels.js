@@ -22,6 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
             datetime: 'MONDAY, AUGUST 15 • 2026',
             btnText: 'Join Class',
             targetDate: new Date('2026-08-15T09:00:00').getTime()
+        },
+        {
+            img: 'https://www.bridgelife.com.np/storage/bridgelife-services/korean-language-720x404.jpg',
+            slogan: 'Language Mastery',
+            title: 'New Batch Launch',
+            desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
+            datetime: 'MONDAY, AUGUST 15 • 2026',
+            btnText: 'Join Class',
+            targetDate: new Date('2026-08-15T09:00:00').getTime()
         }
     ];
 
