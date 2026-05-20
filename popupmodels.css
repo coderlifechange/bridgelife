@@ -1,0 +1,317 @@
+:root {
+    --bl-blue: #0056b3;
+    --bl-orange: #ff6600;
+    --bl-white: #ffffff;
+    --bl-light-gray: #f8fafc;
+    --bl-text-dark: #1e293b;
+    --bl-text-muted: #64748b;
+    --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f1f5f9;
+    height: 100vh;
+}
+
+.modal-overlay-bridgelife-anc-pp {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+}
+
+.modal-overlay-bridgelife-anc-pp.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box-bridgelife-anc-pp {
+    position: relative;
+    width: 95%;
+    max-width: 1100px;
+    height: 650px;
+    background: var(--bl-white);
+    border-radius: 24px; 
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    overflow: hidden;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 86, 179, 0.1);
+    transform: scale(0.98) translateY(30px);
+    transition: var(--transition-smooth);
+    align-items: start;
+}
+
+.modal-overlay-bridgelife-anc-pp.active .modal-box-bridgelife-anc-pp {
+    transform: scale(1) translateY(0);
+}
+
+.modal-img-wrapper-bridgelife-anc-pp {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    background: var(--bl-light-gray);
+}
+
+.modal-img-bridgelife-anc-pp {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 2s ease;
+}
+
+.modal-overlay-bridgelife-anc-pp.active .modal-img-bridgelife-anc-pp {
+    transform: scale(1.05);
+}
+
+.modal-dark-layer-bridgelife-anc-pp {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    pointer-events: none;
+}
+
+.modal-content-bridgelife-anc-pp {
+    position: relative;
+    padding: 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bl-white);
+}
+
+.close-bridgelife-anc-pp {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 32px;
+    color: var(--bl-white);
+    background: var(--bl-orange);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2000;
+    transition: transform 0.3s ease, background 0.3s ease;
+    line-height: 1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.close-bridgelife-anc-pp:hover {
+    transform: rotate(90deg);
+    background: var(--bl-blue);
+}
+
+.slogan-bridgelife-anc-pp {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--bl-orange);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition-smooth) 0.4s;
+}
+
+.title-bridgelife-anc-pp {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--bl-blue);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition-smooth) 0.5s;
+}
+
+.desc-bridgelife-anc-pp {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--bl-text-dark);
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition-smooth) 0.6s;
+}
+
+.datetime-bridgelife-anc-pp {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bl-text-muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition-smooth) 0.7s;
+}
+
+.datetime-bridgelife-anc-pp::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: var(--bl-orange);
+}
+
+.countdown-bridgelife-anc-pp {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition-smooth) 0.8s;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-value {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--bl-blue);
+}
+
+.countdown-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--bl-text-muted);
+    margin-top: 4px;
+}
+
+.btn-bridgelife-anc-pp {
+    width: fit-content;
+    background: var(--bl-blue);
+    color: var(--bl-white);
+    border: none;
+    padding: 18px 45px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition-smooth) 0.9s, background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-bridgelife-anc-pp:hover {
+    background: var(--bl-orange);
+    transform: translateY(-4px) !important;
+    box-shadow: 0 15px 30px rgba(255, 102, 0, 0.3);
+}
+
+.arrow-bridgelife-anc-pp {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--bl-blue);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 900;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.prev-bridgelife-anc-pp { left: 15px; }
+.next-bridgelife-anc-pp { right: 15px; }
+
+.arrow-bridgelife-anc-pp:hover {
+    background: var(--bl-blue);
+    color: var(--bl-white);
+    border-color: var(--bl-blue);
+}
+
+@media (max-width: 900px) {
+    .modal-box-bridgelife-anc-pp {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: 95vh;
+        overflow-y: auto;
+        border-radius: 16px;
+        width: 92%;
+        align-items: start;
+    }
+    .modal-img-wrapper-bridgelife-anc-pp {
+        height: 300px;
+        min-height: 300px;
+    }
+    .modal-content-bridgelife-anc-pp {
+        padding: 40px 25px;
+    }
+    .close-bridgelife-anc-pp {
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+    .title-bridgelife-anc-pp {
+        font-size: 32px;
+    }
+    .countdown-bridgelife-anc-pp {
+        gap: 15px;
+        justify-content: center;
+    }
+    .arrow-bridgelife-anc-pp {
+        width: 38px;
+        height: 38px;
+    }
+    .prev-bridgelife-anc-pp { left: 10px; }
+    .next-bridgelife-anc-pp { right: 10px; }
+}
+
+@media (max-width: 480px) {
+    .title-bridgelife-anc-pp {
+        font-size: 26px;
+    }
+    .desc-bridgelife-anc-pp {
+        font-size: 14px;
+    }
+    .countdown-value {
+        font-size: 24px;
+    }
+    .btn-bridgelife-anc-pp {
+        width: 100%;
+        text-align: center;
+    }
+}
