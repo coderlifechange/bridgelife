@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge Life - Professional Event Modal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Bridge Life - Premium Modals Only</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="popupmodels.css">
 </head>
 <body>
 
+    <!-- Announcement Modal (Slider) -->
     <div class="modal-overlay-bridgelife-anc-pp" id="modal-bridgelife-anc-pp">
         <div class="modal-box-bridgelife-anc-pp">
             <div class="close-bridgelife-anc-pp" id="close-bridgelife-anc-pp">×</div>
@@ -34,6 +37,41 @@
         </div>
     </div>
 
+    <!-- Ticket  Modal (Inquiry Form) -->
+    <div class="modal-overlay-bridgelife-tkt-mdl" id="ticketModalBridgelifeTktMdl">
+        <div class="modal-box-bridgelife-tkt-mdl">
+            <div class="modal-header-bridgelife-tkt-mdl">
+                <div class="header-left-bridgelife-tkt-mdl">
+                    <div class="logo-box-bridgelife-tkt-mdl">
+                        <img src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png" alt="Logo" class="logo-img-bridgelife-tkt-mdl">
+                    </div>
+                    <div class="title-box-bridgelife-tkt-mdl">
+                        <h2>Bridge Life Consultancy</h2>
+                        <p>Elite Priority Booking &  Inquiry Concierge</p>
+                    </div>
+                </div>
+                <button class="close-btn-bridgelife-tkt-mdl" id="closeModalBridgelifeTktMdl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body-bridgelife-tkt-mdl">
+                <div class="iframe-wrapper-bridgelife-tkt-mdl">
+                    <iframe class="ticket-frame-bridgelife-tkt-mdl" 
+                            src="https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1" 
+                            loading="lazy" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="modal-footer-bridgelife-tkt-mdl">
+                <p>© <span id="footerYearBridgelifeTktMdl"></span> <strong>Bridge Life Consultancy</strong>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="popupmodels.js"></script>
 </body>
 </html>

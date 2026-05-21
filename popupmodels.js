@@ -181,4 +181,73 @@ document.addEventListener('DOMContentLoaded', () => {
             stopAutoSlide();
         }
     });
+
+ 
+    const ticketModal = document.getElementById('ticketModalBridgelifeTktMdl');
+    const ticketCloseBtn = document.getElementById('closeModalBridgelifeTktMdl');
+    const footerYear = document.getElementById('footerYearBridgelifeTktMdl');
+
+    function openInquiryForm() {
+        
+        stopAutoSlide();
+    
+        if (modal) modal.classList.remove('active');
+        
+       
+        const c1 = document.querySelector('.circle-1');
+        const c2 = document.querySelector('.circle-2');
+        if (c1) c1.style.transform = 'scale(1.5) translate(-10%, -10%)';
+        if (c2) c2.style.transform = 'scale(1.2) translate(10%, 10%)';
+
+
+        if (ticketModal) {
+            ticketModal.classList.add('active-bridgelife-tkt-mdl');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeInquiryForm() {
+        const c1 = document.querySelector('.circle-1');
+        const c2 = document.querySelector('.circle-2');
+        if (c1) c1.style.transform = 'scale(1) translate(0, 0)';
+        if (c2) c2.style.transform = 'scale(1) translate(0, 0)';
+
+        if (ticketModal) {
+            ticketModal.classList.remove('active-bridgelife-tkt-mdl');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+  
+    const triggerElements = [
+        'img-bridgelife-anc-pp',
+        'btn-bridgelife-anc-pp'
+    ];
+
+    triggerElements.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openInquiryForm();
+            });
+            el.style.cursor = 'pointer'; 
+        }
+    });
+
+    if (ticketCloseBtn) {
+        ticketCloseBtn.onclick = closeInquiryForm;
+    }
+
+
+
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
+
+    document.addEventListener('keydown', (e) => { 
+        if (e.key === 'Escape' && ticketModal && ticketModal.classList.contains('active-bridgelife-tkt-mdl')) {
+            closeInquiryForm();
+        }
+    });
 });
