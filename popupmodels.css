@@ -167,12 +167,12 @@
 
 .modal-box-bridgelife-anc-pp {
     position: relative;
-    width: clamp(300px, 95%, 1000px); /* Reduced width for a more compact, elite feel */
-    height: clamp(450px, 85vh, 600px); 
+    width: clamp(300px, 95%, 1100px); /* Slightly wider for better landscape image fit */
+    height: clamp(450px, 80vh, 550px); /* Slightly shorter for a more balanced landscape feel */
     background: var(--bl-white);
     border-radius: 32px; 
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
     overflow: hidden !important;
     box-shadow: 0 50px 120px -20px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(0, 86, 179, 0.08);
@@ -193,7 +193,7 @@
 
 .modal-content-bridgelife-anc-pp {
     position: relative;
-    padding: clamp(30px, 6%, 70px);
+    padding: clamp(20px, 4vh, 40px) clamp(30px, 6%, 70px);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -207,18 +207,23 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    display: flex;
-    align-items: stretch;
-    background: var(--bl-light-gray);
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     order: 2; /* Image on the right side */
+    display: block; 
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05); /* Soft shadow between content and image */
 }
 
 .modal-img-bridgelife-anc-pp {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Changed to cover for high-quality fill without distortion */
     object-position: center;
-    transition: transform 3s ease;
+    transition: transform 4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.8s ease;
+    will-change: transform;
+    z-index: 1;
 }
 
 .modal-overlay-bridgelife-anc-pp.active .modal-img-bridgelife-anc-pp {
@@ -228,8 +233,15 @@
 .modal-dark-layer-bridgelife-anc-pp {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        rgba(0, 0, 0, 0.05) 50%, 
+        rgba(0, 0, 0, 0.2) 100%
+    );
     pointer-events: none;
+    z-index: 2;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.1); /* Subtle inner shadow for depth */
 }
 
 .close-bridgelife-anc-pp {
@@ -398,14 +410,14 @@
 /* Laptop & Desktop Optimization */
 @media (min-width: 1366px) {
     .modal-box-bridgelife-anc-pp {
-        height: 600px;
-        max-width: 1000px; 
+        height: 550px;
+        max-width: 1100px; 
     }
     .modal-content-bridgelife-anc-pp {
-        padding: 60px 80px;
+        padding: 35px 70px;
     }
     .title-bridgelife-anc-pp {
-        font-size: 48px;
+        font-size: 44px;
     }
 }
 
@@ -419,7 +431,7 @@
 
 @media (max-width: 1024px) {
     .modal-box-bridgelife-anc-pp {
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: repeat(2, minmax(0, 1fr)); 
         height: auto;
         min-height: 550px;
     }
@@ -439,12 +451,16 @@
         align-items: start;
     }
     .modal-img-wrapper-bridgelife-anc-pp {
-        height: clamp(200px, 30vh, 280px); 
-        min-height: 200px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        min-height: 250px;
+        max-height: 45vh;
         order: 1; 
+        position: relative; /* Ensure relative positioning for absolute child in mobile */
     }
     .modal-content-bridgelife-anc-pp {
-        padding: clamp(20px, 5vw, 30px);
+        padding: clamp(15px, 5vw, 25px) clamp(15px, 5vw, 30px);
         height: auto;
         text-align: center;
         order: 2; 

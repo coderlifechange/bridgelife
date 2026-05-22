@@ -6,31 +6,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const slides = [
         {
-            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/imagesqtbnand9gcsegequmoyvairrq-wdhtiq7p3reycwn.jpg',
-            slogan: 'Bridge Life Excellence',
-            title: 'Your Future Starts Here',
-            desc: 'Join our comprehensive seminar on studying in Japan, Korea, and UK. Get expert counseling and visa guidance directly from our specialists.',
-            datetime: 'SATURDAY, JUNE 20 • 2026',
+            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34444-pm.jpeg',
+            slogan: 'Bridge Life',
+            title: 'Chess Competition',
+            desc: 'Join us for a thrilling chess competition. Register now to secure your spot!',
+            datetime: 'Friday, May 22 • 2026',
             btnText: 'Book Free Seat',
-            targetDate: new Date('2026-06-20T20:00:00').getTime()
+            targetDate: new Date('2026-05-22T20:00:00').getTime()
         },
         {
-            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/imagesqtbnand9gctcf-xbfja6rxui-ynp6qj-muqovrn73.jpg',
+            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34410-pm.jpeg',
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
-            datetime: 'MONDAY, AUGUST 15 • 2026',
+            datetime: 'Sunday, May 24 • 2026',
             btnText: 'Join Class',
-            targetDate: new Date('2026-08-15T09:00:00').getTime()
+            targetDate: new Date('2026-05-24T20:00:00').getTime()
         },
         {
-            img: 'https://www.bridgelife.com.np/storage/bridgelife-services/korean-language-720x404.jpg',
+            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34539-pm.jpeg',
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
-            datetime: 'MONDAY, AUGUST 15 • 2026',
+            datetime: 'Wednesday, May 26 • 2026',
             btnText: 'Join Class',
-            targetDate: new Date('2026-08-15T09:00:00').getTime()
+            targetDate: new Date('2026-05-26T20:00:00').getTime()
         }
     ];
 
