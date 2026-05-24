@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
             slogan: 'Bridge Life',
             title: 'Chess Competition',
             desc: 'Join us for a thrilling chess competition. Register now to secure your spot!',
-            datetime: 'Friday, May 22 • 2026',
+            datetime: 'Friday, May 30 • 2026',
             btnText: 'Book Free Seat',
-            targetDate: new Date('2026-05-22T20:00:00').getTime()
+            targetDate: new Date('2026-05-30T20:00:00').getTime()
         },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34410-pm.jpeg',
