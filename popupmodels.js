@@ -10,27 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
             slogan: 'Bridge Life',
             title: 'Chess Competition',
             desc: 'Join us for a thrilling chess competition. Register now to secure your spot!',
-            datetime: 'Friday, May 30 • 2026',
+            datetime: 'Friday, june 12 • 2026',
             btnText: 'Book Free Seat',
-            targetDate: new Date('2026-05-30T20:00:00').getTime()
+            targetDate: new Date('2026-06-12T20:00:00').getTime()
         },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34410-pm.jpeg',
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
-            datetime: 'Sunday, May 24 • 2026',
+            datetime: 'Sunday, may 31 • 2026',
             btnText: 'Join Class',
-            targetDate: new Date('2026-05-24T20:00:00').getTime()
+            targetDate: new Date('2026-05-31T20:00:00').getTime()
         },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34539-pm.jpeg',
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
-            datetime: 'Wednesday, May 26 • 2026',
+            datetime: 'Wednesday, june 10• 2026',
             btnText: 'Join Class',
-            targetDate: new Date('2026-05-26T20:00:00').getTime()
+            targetDate: new Date('2026-06-10T20:00:00').getTime()
         }
     ];
 
