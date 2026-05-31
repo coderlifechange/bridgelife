@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prev-bridgelife-anc-pp');
     const nextBtn = document.getElementById('next-bridgelife-anc-pp');
     
-    const slides = [
+    // Initial slides data
+    const allSlides = [
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34444-pm.jpeg',
             slogan: 'Bridge Life',
@@ -34,16 +35,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // Filter out expired events
+    const slides = allSlides.filter(slide => slide.targetDate > new Date().getTime());
+
     let currentSlide = 0;
     let countdownInterval;
     let autoSlideInterval;
     const AUTO_SLIDE_DELAY = 5000;
+    const SHOW_DELAY = 1500; // 1.5 second interval before showing
 
-    setTimeout(() => {
-        modal.classList.add('active');
-        updateSlide(0);
-        startAutoSlide();
-    }, 1000);
+    // Logical Points: Visit tracking and Session management
+    function shouldShowPopup() {
+        // 1. Strict Homepage Check: Only show on the exact homepage entry points
+        const path = window.location.pathname.toLowerCase();
+        
+        // Define what constitutes the "Homepage"
+        const homepagePaths = [
+            '/', 
+            '/index', 
+            '/index.html', 
+            '/popupmodels.html'
+        ];
+
+        // Check if current path matches or ends with any homepage paths
+        const isHomepage = homepagePaths.some(hp => 
+            path === hp || 
+            path.endsWith(hp) || 
+            (hp === '/' && path === '')
+        );
+        
+        // 2. Secondary Safety: Specifically block known non-homepage files
+        const internalPages = ['taketform.html', 'about', 'contact', 'services', 'test.html', 'pp.html'];
+        const isInternalPage = internalPages.some(ip => path.includes(ip));
+
+        // If it's an internal page or NOT a homepage, suppress the modal
+        if (isInternalPage || !isHomepage) {
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('active');
+            }
+            return false;
+        }
+
+        // 3. Final Check: Only show if there are active (non-expired) slides
+        if (slides.length === 0) return false;
+
+        return true;
+    }
+
+    if (modal && shouldShowPopup()) {
+        setTimeout(() => {
+            modal.classList.add('active');
+            updateSlide(0);
+            startAutoSlide();
+        }, SHOW_DELAY);
+    }
 
     function updateSlide(index) {
         const slide = slides[index];
@@ -53,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'desc-bridgelife-anc-pp',
             'datetime-bridgelife-anc-pp',
             'countdown-bridgelife-anc-pp',
-            'btn-bridgelife-anc-pp'
+            'open-ticket-btn-bridgelife'
         ];
 
         contentElements.forEach(id => {
@@ -71,9 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = document.getElementById('title-bridgelife-anc-pp');
             const desc = document.getElementById('desc-bridgelife-anc-pp');
             const datetime = document.getElementById('datetime-bridgelife-anc-pp');
-            const btn = document.getElementById('btn-bridgelife-anc-pp');
+            const btn = document.getElementById('open-ticket-btn-bridgelife');
 
-            if (img) img.src = slide.img;
+            if (img) {
+                img.style.opacity = '0';
+                setTimeout(() => {
+                    img.src = slide.img;
+                    img.onload = () => {
+                        img.style.opacity = '1';
+                    };
+                }, 200);
+            }
             if (slogan) slogan.textContent = slide.slogan;
             if (title) title.textContent = slide.title;
             if (desc) desc.textContent = slide.desc;
@@ -221,7 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const triggerElements = [
         'img-bridgelife-anc-pp',
-        'btn-bridgelife-anc-pp'
+        'open-ticket-btn-bridgelife',
+        'openModalBridgelifeTktMdl'
     ];
 
     triggerElements.forEach(id => {

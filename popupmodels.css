@@ -353,7 +353,7 @@
     margin-top: 4px;
 }
 
-.btn-bridgelife-anc-pp {
+.open-ticket-btn-bridgelife {
     width: fit-content;
     background: var(--bl-blue);
     color: var(--bl-white);
@@ -372,7 +372,7 @@
     transition: var(--transition-smooth) 0.9s, background 0.3s ease, transform 0.3s ease;
 }
 
-.btn-bridgelife-anc-pp:hover {
+.open-ticket-btn-bridgelife:hover {
     background: var(--bl-orange);
     transform: translateY(-4px) !important;
     box-shadow: 0 15px 30px rgba(255, 102, 0, 0.3);
@@ -496,7 +496,7 @@
     }
     .prev-bridgelife-anc-pp { left: 8px; }
     .next-bridgelife-anc-pp { right: 8px; }
-    .btn-bridgelife-anc-pp {
+    .open-ticket-btn-bridgelife {
         width: 100%;
         text-align: center;
         padding: 15px;
@@ -574,7 +574,7 @@
 }
 
 .modal-box-bridgelife-tkt-mdl {
-    width: clamp(300px, 95%, 800px);
+    width: clamp(300px, 90%, 700px);
     max-height: 92vh;
     background: #ffffff;
     border-radius: clamp(16px, 3vw, 32px);
