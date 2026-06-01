@@ -237,9 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
  
-    const ticketModal = document.getElementById('ticketModalBridgelifeTktMdl');
-    const ticketCloseBtn = document.getElementById('closeModalBridgelifeTktMdl');
-    const footerYear = document.getElementById('footerYearBridgelifeTktMdl');
+    const ticketModal = document.getElementById('blPremiumSupportModal');
+    const ticketCloseBtn = document.getElementById('blCloseSupportModal');
+    const footerYear = document.getElementById('blSupportFooterYear');
 
     function openInquiryForm() {
         
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         if (ticketModal) {
-            ticketModal.classList.add('active-bridgelife-tkt-mdl');
+            ticketModal.classList.add('bl-support-active');
             document.body.style.overflow = 'hidden';
         }
     }
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (c2) c2.style.transform = 'scale(1) translate(0, 0)';
 
         if (ticketModal) {
-            ticketModal.classList.remove('active-bridgelife-tkt-mdl');
+            ticketModal.classList.remove('bl-support-active');
             document.body.style.overflow = 'auto';
         }
     }
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const triggerElements = [
         'img-bridgelife-anc-pp',
         'open-ticket-btn-bridgelife',
-        'openModalBridgelifeTktMdl'
+        'blOpenSupportTrigger'
     ];
 
     triggerElements.forEach(id => {
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('keydown', (e) => { 
-        if (e.key === 'Escape' && ticketModal && ticketModal.classList.contains('active-bridgelife-tkt-mdl')) {
+        if (e.key === 'Escape' && ticketModal && ticketModal.classList.contains('bl-support-active')) {
             closeInquiryForm();
         }
     });
