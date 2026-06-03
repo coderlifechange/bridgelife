@@ -1,11 +1,19 @@
 :root {
-    --bl-blue: #0056b3;
-    --bl-orange: #ff2b4a;
+    --bl-blue: #0a1d37;
+    --bl-orange: #ed0d0d;
     --bl-white: #ffffff;
     --bl-light-gray: #f8fafc;
     --bl-text-dark: #1e293b;
     --bl-text-muted: #64748b;
     --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Announcement Banner Theme */
+    --bl-primary-red: #ed0d0d;
+    --bl-deep-navy: #0a1d37;
+    --bl-accent-gold: #ff0000;
+    --bl-pure-white: #ffffff;
+    --banner-height: 55px;
+    --anim-speed: 35s;
 }
 .body-div-bridgelife-tkt-mdl {
     position: relative;
@@ -557,8 +565,8 @@
 .bl-support-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(10, 29, 55, 0.7);
-    backdrop-filter: blur(15px);
+    background: rgba(10, 29, 55, 0.75);
+    backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -574,65 +582,82 @@
 }
 
 .bl-support-box {
-    width: clamp(300px, 90%, 700px);
-    max-height: 92vh;
+    width: clamp(320px, 95%, 850px);
+    max-height: 94vh;
     background: #ffffff;
-    border-radius: clamp(16px, 3vw, 32px);
+    border-radius: clamp(20px, 4vw, 40px);
     overflow: hidden !important;
-    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.4);
-    transform: scale(0.8) translateY(100px) rotateX(15deg);
+    box-shadow: 0 60px 150px -20px rgba(0, 0, 0, 0.5);
+    transform: scale(0.85) translateY(60px) rotateX(10deg);
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-    perspective: 1000px;
+    perspective: 1200px;
     display: flex;
     flex-direction: column;
     scrollbar-width: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+.bl-support-overlay.bl-support-active .bl-support-box {
+    transform: scale(1) translateY(0) rotateX(0deg);
+    opacity: 1;
+}
 
 @media (max-width: 600px) {
     .bl-support-box {
-        width: 96%;
+        width: 98%;
         max-height: 98vh;
-        border-radius: clamp(12px, 4vw, 20px);
+        border-radius: clamp(16px, 5vw, 24px);
     }
     
     .bl-support-header {
-        padding: clamp(10px, 3vh, 15px) clamp(12px, 4vw, 20px);
-    }
-
-    .bl-support-header-left {
-        gap: clamp(8px, 2vw, 15px);
-    }
-
-    .bl-support-logo-box {
-        padding: clamp(4px, 1.2vw, 8px);
-        border-radius: 12px;
+        padding: 12px 15px !important;
     }
 
     .bl-support-logo-img {
-        width: clamp(32px, 8vw, 40px);
-        height: clamp(32px, 8vw, 40px);
+        width: 32px !important;
+        height: 32px !important;
     }
 
-    .bl-support-title-box {
-        display: none !important;
+    .bl-support-logo-box {
+        padding: 6px !important;
+        border-radius: 12px !important;
+    }
+
+    .bl-support-title-box h2 {
+        font-size: 18px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .bl-support-title-box p {
+        font-size: 8px !important;
+        letter-spacing: 1.5px !important;
+        margin-top: 3px !important;
     }
 
     .bl-support-close-btn {
-        width: clamp(32px, 8vw, 38px);
-        height: clamp(32px, 8vw, 38px);
-        font-size: clamp(16px, 4vw, 18px);
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 18px !important;
     }
 
     .bl-support-iframe-wrapper {
-        height: 80vh; 
+        height: 78vh !important; 
     }
 
     .bl-support-footer {
-        padding: 10px 15px;
-        font-size: 10px;
+        padding: 10px 15px !important;
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .bl-support-title-box p {
+        display: none !important;
+    }
+    
+    .bl-support-header {
+        padding: 10px 12px !important;
     }
 }
 
@@ -863,4 +888,118 @@
     color: #718096;
     font-size: clamp(11px, 1.2vw, 14px);
     flex-shrink: 0;
+}
+
+/* ============================================================
+   ANIMATED ANNOUNCEMENT BANNER
+   ============================================================ */
+
+/* Announcement Banner Container */
+.announcement_bridge_container {
+    width: 100%;
+    background: linear-gradient(90deg, var(--bl-deep-navy) 0%, #1a365d 50%, var(--bl-deep-navy) 100%);
+    color: var(--bl-pure-white);
+    overflow: hidden;
+    position: relative;
+    height: var(--banner-height);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid var(--bl-primary-red);
+    z-index: 1000;
+}
+
+/* The scrolling wrapper */
+.announcement_bridge_track {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: announcement_bridge_scroll var(--anim-speed) linear infinite;
+    will-change: transform;
+}
+
+/* Pause on Hover */
+.announcement_bridge_container:hover .announcement_bridge_track {
+    animation-play-state: paused;
+}
+
+/* Individual Announcement Items */
+.announcement_bridge_item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+.announcement_bridge_item i {
+    color: var(--bl-accent-gold);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+}
+
+.announcement_bridge_link {
+    color: var(--bl-pure-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    outline: none;
+    border-radius: 4px;
+}
+
+.announcement_bridge_link:hover, 
+.announcement_bridge_link:focus {
+    color: var(--bl-accent-gold);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.announcement_bridge_link:focus-visible {
+    outline: 2px solid var(--bl-primary-red);
+    outline-offset: 4px;
+}
+
+.announcement_bridge_badge {
+    background: var(--bl-primary-red);
+    color: white;
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-left: 15px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 10px rgba(237, 13, 13, 0.4);
+}
+
+/* Scroll Animation using Transforms for Performance */
+@keyframes announcement_bridge_scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Accessibility: Reduce Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .announcement_bridge_track {
+        animation: none;
+        white-space: normal;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .announcement_bridge_container {
+        height: auto;
+        padding: 10px 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .announcement_bridge_item {
+        padding: 0 25px;
+        font-size: 0.8rem;
+    }
 }

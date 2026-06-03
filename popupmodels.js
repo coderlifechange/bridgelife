@@ -314,4 +314,26 @@ document.addEventListener('DOMContentLoaded', () => {
             closeInquiryForm();
         }
     });
+
+    /* ============================================================
+       ANIMATED ANNOUNCEMENT BANNER LOGIC
+       ============================================================ */
+    const announcementTrack = document.getElementById('announcement_bridge_track_id');
+    const announcementLinks = document.querySelectorAll('.announcement_bridge_link');
+
+    if (announcementTrack) {
+        // Accessibility: Pause animation on focus
+        announcementLinks.forEach(link => {
+            link.addEventListener('focus', () => {
+                announcementTrack.style.animationPlayState = 'paused';
+            });
+            link.addEventListener('blur', () => {
+                announcementTrack.style.animationPlayState = 'running';
+            });
+        });
+
+        // Pause on hover is handled by CSS, but we can add JS backup if needed
+        // announcementTrack.parentElement.onmouseenter = () => announcementTrack.style.animationPlayState = 'paused';
+        // announcementTrack.parentElement.onmouseleave = () => announcementTrack.style.animationPlayState = 'running';
+    }
 });
