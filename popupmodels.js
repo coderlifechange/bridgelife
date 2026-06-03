@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial slides data
     const allSlides = [
+         {
+            img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-06-02-at-84149-am.jpeg',
+            slogan: 'IELTS-PTE',
+            title: 'IELTS Paper based Test',
+            desc: 'Join us for a thrilling IELTS paper based test. Register now to secure your spot!',
+            datetime: 'Saturday, june 27 • 2026',
+            btnText: 'Book Now',
+            targetDate: new Date('2026-06-27T20:00:00').getTime()
+        },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34444-pm.jpeg',
             slogan: 'Bridge Life',
