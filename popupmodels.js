@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
             slogan: 'Bridge Life',
             title: 'Chess Competition',
             desc: 'Join us for a thrilling chess competition. Register now to secure your spot!',
-            datetime: 'Friday, june 12 • 2026',
+            datetime: 'Friday, june 19 • 2026',
             btnText: 'Book Free Seat',
-            targetDate: new Date('2026-06-12T20:00:00').getTime()
+            targetDate: new Date('2026-06-19T20:00:00').getTime()
         },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34410-pm.jpeg',
@@ -38,27 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
-            datetime: 'Wednesday, june 10• 2026',
+            datetime: 'Wednesday, june 21• 2026',
             btnText: 'Join Class',
             targetDate: new Date('2026-06-10T20:00:00').getTime()
         }
     ];
 
-    // Filter out expired events
     const slides = allSlides.filter(slide => slide.targetDate > new Date().getTime());
 
     let currentSlide = 0;
     let countdownInterval;
     let autoSlideInterval;
     const AUTO_SLIDE_DELAY = 5000;
-    const SHOW_DELAY = 1500; // 1.5 second interval before showing
+    const SHOW_DELAY = 1500; 
 
-    // Logical Points: Visit tracking and Session management
+   
     function shouldShowPopup() {
-        // 1. Strict Homepage Check: Only show on the exact homepage entry points
+
         const path = window.location.pathname.toLowerCase();
-        
-        // Define what constitutes the "Homepage"
+      
         const homepagePaths = [
             '/', 
             '/index', 
@@ -66,18 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
             '/popupmodels.html'
         ];
 
-        // Check if current path matches or ends with any homepage paths
         const isHomepage = homepagePaths.some(hp => 
             path === hp || 
             path.endsWith(hp) || 
             (hp === '/' && path === '')
         );
         
-        // 2. Secondary Safety: Specifically block known non-homepage files
         const internalPages = ['taketform.html', 'about', 'contact', 'services', 'test.html', 'pp.html'];
         const isInternalPage = internalPages.some(ip => path.includes(ip));
 
-        // If it's an internal page or NOT a homepage, suppress the modal
         if (isInternalPage || !isHomepage) {
             if (modal) {
                 modal.style.display = 'none';
@@ -86,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
 
-        // 3. Final Check: Only show if there are active (non-expired) slides
         if (slides.length === 0) return false;
 
         return true;
@@ -249,20 +243,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const ticketModal = document.getElementById('blPremiumSupportModal');
     const ticketCloseBtn = document.getElementById('blCloseSupportModal');
     const footerYear = document.getElementById('blSupportFooterYear');
+    const baseIframeUrl = "https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1";
 
-    function openInquiryForm() {
-        
+    function openInquiryForm(subject = null) {
         stopAutoSlide();
-    
         if (modal) modal.classList.remove('active');
         
-       
-        const c1 = document.querySelector('.circle-1');
-        const c2 = document.querySelector('.circle-2');
-        if (c1) c1.style.transform = 'scale(1.5) translate(-10%, -10%)';
-        if (c2) c2.style.transform = 'scale(1.2) translate(10%, 10%)';
-
-
+        // Pre-fill logic: Update iframe URL with subject if provided
+        const iframe = document.querySelector('.bl-support-iframe');
+        if (iframe) {
+            if (subject) {
+                iframe.src = `${baseIframeUrl}&subject=${encodeURIComponent('Inquiry: ' + subject)}`;
+            } else {
+                iframe.src = baseIframeUrl;
+            }
+        }
+        
         if (ticketModal) {
             ticketModal.classList.add('bl-support-active');
             document.body.style.overflow = 'hidden';
@@ -270,32 +266,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeInquiryForm() {
-        const c1 = document.querySelector('.circle-1');
-        const c2 = document.querySelector('.circle-2');
-        if (c1) c1.style.transform = 'scale(1) translate(0, 0)';
-        if (c2) c2.style.transform = 'scale(1) translate(0, 0)';
-
         if (ticketModal) {
             ticketModal.classList.remove('bl-support-active');
             document.body.style.overflow = 'auto';
         }
     }
 
-  
-    const triggerElements = [
+    // Universal Modal Triggers (using class for multiple elements)
+    document.querySelectorAll('.blOpenSupportTrigger').forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // Try to get subject from data-subject attribute, then from inner text
+            const subject = el.getAttribute('data-subject') || el.innerText.trim() || null;
+            openInquiryForm(subject);
+        });
+        el.style.cursor = 'pointer';
+    });
+
+    const internalTriggers = [
         'img-bridgelife-anc-pp',
-        'open-ticket-btn-bridgelife',
-        'blOpenSupportTrigger'
+        'open-ticket-btn-bridgelife'
     ];
 
-    triggerElements.forEach(id => {
+    internalTriggers.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
             el.addEventListener('click', (e) => {
                 e.stopPropagation();
-                openInquiryForm();
+                if (slides[currentSlide]) {
+                    openInquiryForm(slides[currentSlide].title);
+                } else {
+                    openInquiryForm();
+                }
             });
-            el.style.cursor = 'pointer'; 
+            el.style.cursor = 'pointer';
         }
     });
 
