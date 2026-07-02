@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Life - Standalone Support Module</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Link to the shared CSS -->
+    <link rel="stylesheet" href="popupmodels.css">
+
+    <style>
+        /* Standalone Page Styling */
+        body {
+            background: linear-gradient(135deg, #061320 0%, #0b2440 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .demo-container {
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .demo-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="demo-container">
+        <h1 class="demo-title">Support Portal Demo</h1>
+        <!-- Unique trigger button for the standalone module -->
+        <button class="bl-support-trigger-btn" id="blOpenSupportTrigger">
+            <i class="fa-solid fa-headset"></i> Open Inquiry Form
+        </button>
+    </div>
+
+    <!-- Background Decorations (Optional, matches JS logic) -->
+    <div class="bg-decoration circle-1"></div>
+    <div class="bg-decoration circle-2"></div>
+
+    <!-- The Support Modal (Inquiry Form) -->
+    <div class="bl-support-overlay" id="blPremiumSupportModal">
+        <div class="bl-support-box">
+            <div class="bl-support-header">
+                <div class="bl-support-header-left">
+                    <div class="bl-support-logo-box">
+                        <img src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png" alt="Logo" class="bl-support-logo-img">
+                    </div>
+                    <div class="bl-support-title-box">
+                        <h2>Bridge Life Consultancy</h2>
+                        <p>Premium Ticket Support System</p>
+                    </div>
+                </div>
+                <button class="bl-support-close-btn" id="blCloseSupportModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="bl-support-body">
+                <div class="bl-support-iframe-wrapper">
+                    <iframe class="bl-support-iframe" 
+                            src="https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1" 
+                            loading="lazy" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="bl-support-footer">
+                <p>© <span id="blSupportFooterYear"></span> <strong>Bridge Life Consultancy</strong>. All Rights Reserved. Powered By BridgeLife</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Isolated Support Modal Logic -->
+    <script src="support-modal.js"></script>
+</body>
+</html>

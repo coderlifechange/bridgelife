@@ -1,0 +1,126 @@
+<body>
+  <div class="global-whole-screen-style">
+    <div class="body-div-bridgelife-tkt-mdl">
+      <div
+        class="bg-circle-bridgelife-tkt-mdl bg-circle1-bridgelife-tkt-mdl"
+      ></div>
+      <div
+        class="bg-circle-bridgelife-tkt-mdl bg-circle2-bridgelife-tkt-mdl"
+      ></div>
+      <div class="hero-card-bridgelife-tkt-mdl" data-aos="zoom-in">
+        <div class="hero-grid-bridgelife-tkt-mdl">
+          <div class="hero-left-bridgelife-tkt-mdl">
+            <h1>
+              Premium <span>Support Ticket</span><br />
+              Management Portal
+            </h1>
+            <p>
+              Experience a modern and beautifully crafted support system
+              interface for Bridge Life Consultancy with smooth animations,
+              premium material design styling, elegant glassmorphism effects,
+              and seamless ticket form integration.
+            </p>
+            <button
+              class="open-btn-bridgelife-tkt-mdl"
+              id="openModalBridgelifeTktMdl"
+            >
+              <i class="fa-solid fa-headset"></i> Open Ticket Form
+            </button>
+          </div>
+          <!-- RIGHT -->
+          <div class="hero-right-bridgelife-tkt-mdl">
+            <div class="floating-card-bridgelife-tkt-mdl">
+              <div class="ticket-icon-bridgelife-tkt-mdl">
+                <i class="fa-solid fa-ticket"></i>
+              </div>
+              <h2>Fast & Professional Support</h2>
+              <p>
+                Submit your support request through our beautifully integrated
+                ticket portal with secure iframe loading, premium modal
+                experience, smooth transitions, responsive design, and
+                professional user experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal-overlay-bridgelife-tkt-mdl"
+        id="ticketModalBridgelifeTktMdl"
+      >
+        <div class="modal-box-bridgelife-tkt-mdl">
+          <div class="modal-header-bridgelife-tkt-mdl">
+            <div class="header-left-bridgelife-tkt-mdl">
+              <div class="logo-box-bridgelife-tkt-mdl">
+                <img
+                  src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png"
+                  alt="Bridge Life Consultancy Logo"
+                  class="logo-img-bridgelife-tkt-mdl"
+                />
+              </div>
+              <div class="title-box-bridgelife-tkt-mdl">
+                <h2>Bridge Life Consultancy</h2>
+                <p>Premium Ticket Support System</p>
+              </div>
+            </div>
+            <button
+              class="close-btn-bridgelife-tkt-mdl"
+              id="closeModalBridgelifeTktMdl"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="modal-body-bridgelife-tkt-mdl">
+            <div class="iframe-wrapper-bridgelife-tkt-mdl">
+              <iframe
+                class="ticket-frame-bridgelife-tkt-mdl"
+                src="https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1"
+                loading="lazy"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+          </div>
+          <div class="modal-footer-bridgelife-tkt-mdl">
+            <p>
+              © <span id="footerYearBridgelifeTktMdl"></span>
+              <strong>Bridge Life Consultancy</strong>. All Rights Reserved.
+              Powered By Sektall (ATG HOST).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!--<script src="https://myfiles.bridgelife.com.np/myfiles/bridgelifetktmdl/assets/js/bridgelife-tkt-mdl-min.js"></script>-->
+  <script>
+    AOS.init({ duration: 1200, once: true });
+    const modalBridgelifeTktMdl = document.getElementById(
+      "ticketModalBridgelifeTktMdl",
+    );
+    const openBtnBridgelifeTktMdl = document.getElementById(
+      "openModalBridgelifeTktMdl",
+    );
+    const closeBtnBridgelifeTktMdl = document.getElementById(
+      "closeModalBridgelifeTktMdl",
+    );
+    openBtnBridgelifeTktMdl.addEventListener("click", function () {
+      modalBridgelifeTktMdl.classList.add("active-bridgelife-tkt-mdl");
+      document.body.style.overflow = "hidden";
+    });
+    closeBtnBridgelifeTktMdl.addEventListener("click", function () {
+      modalBridgelifeTktMdl.classList.remove("active-bridgelife-tkt-mdl");
+      document.body.style.overflow = "auto";
+    });
+    modalBridgelifeTktMdl.addEventListener("click", function (e) {
+      if (e.target === modalBridgelifeTktMdl) {
+        e.stopPropagation();
+      }
+    });
+    document.getElementById("footerYearBridgelifeTktMdl").innerHTML =
+      new Date().getFullYear();
+  </script>
+</body>

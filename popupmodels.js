@@ -11,36 +11,36 @@ document.addEventListener('DOMContentLoaded', () => {
             slogan: 'IELTS-PTE',
             title: 'IELTS Paper based Test',
             desc: 'Join us for a thrilling IELTS paper based test. Register now to secure your spot!',
-            datetime: 'Saturday, june 27 • 2026',
+            datetime: 'Saturday, July 18 • 2026',
             btnText: 'Book Now',
-            targetDate: new Date('2026-06-27T20:00:00').getTime()
+            targetDate: new Date('2026-07-18T20:00:00').getTime()
         },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34444-pm.jpeg',
             slogan: 'Bridge Life',
             title: 'Chess Competition',
             desc: 'Join us for a thrilling chess competition. Register now to secure your spot!',
-            datetime: 'Friday, june 19 • 2026',
+            datetime: 'Friday, July 17 • 2026',
             btnText: 'Book Free Seat',
-            targetDate: new Date('2026-06-19T20:00:00').getTime()
+            targetDate: new Date('2026-07-17T20:00:00').getTime()
         },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34410-pm.jpeg',
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
-            datetime: 'Sunday, may 31 • 2026',
+            datetime: 'Sunday, July 12 • 2026',
             btnText: 'Join Class',
-            targetDate: new Date('2026-05-31T20:00:00').getTime()
+            targetDate: new Date('2026-07-12T20:00:00').getTime()
         },
         {
             img: 'https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34539-pm.jpeg',
             slogan: 'Language Mastery',
             title: 'New Batch Launch',
             desc: 'Accelerate your IELTS, PTE, and Japanese language scores. Enrollment is now open for our high-success rate language programs.',
-            datetime: 'Wednesday, june 21• 2026',
+            datetime: 'Wednesday, July 15• 2026',
             btnText: 'Join Class',
-            targetDate: new Date('2026-06-10T20:00:00').getTime()
+            targetDate: new Date('2026-07-15T20:00:00').getTime()
         }
     ];
 

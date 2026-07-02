@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="./popupmodels.css">
+
+<body>
+    <div class="global-whole-screen-style">
+        <div class="body-div-bridgelife-tkt-mdl">
+            <div class="bg-decoration circle-1"></div>
+            <div class="bg-decoration circle-2"></div>
+            <button class="bl-support-trigger-btn" id="blOpenSupportTrigger"> <i
+                     class="fa-solid fa-headset"></i> Open Ticket Form </button>
+
+
+            <div class="bl-support-overlay" id="blPremiumSupportModal">
+                <div class="bl-support-box">
+                    <div class="bl-support-header">
+                        <div class="bl-support-header-left">
+                            <div class="bl-support-logo-box"> <img
+                                    src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png"
+                                    alt="Bridge Life Consultancy Logo" class="bl-support-logo-img"> </div>
+                            <div class="bl-support-title-box">
+                                <h2>Bridge Life Consultancy</h2>
+                                <p>Premium Ticket Support System</p>
+                            </div>
+                        </div> <button class="bl-support-close-btn" id="blCloseSupportModal"> <i
+                                class="fa-solid fa-xmark"></i> </button>
+                    </div>
+                    <div class="bl-support-body">
+                        <div class="bl-support-iframe-wrapper"> <iframe class="bl-support-iframe"
+                                src="https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1" loading="lazy"
+                                frameborder="0" allowfullscreen> </iframe> </div>
+                    </div>
+                    <div class="bl-support-footer">
+                        <p> © <span id="blSupportFooterYear"></span> <strong>Bridge Life Consultancy</strong>.
+                            All Rights Reserved. Powered By Sektall (ATG HOST). </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script
+        src="./popupmodels.js"></script>
+    <script> AOS.init({ duration: 1200, once: true }); </script>
+</body>

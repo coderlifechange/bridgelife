@@ -1,0 +1,199 @@
+/* Course Details Page Styles */
+:root {
+    --sidebar-width: 380px;
+}
+
+.course-details-hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0 80px;
+}
+
+.course-hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    color: white;
+}
+
+.course-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+}
+
+.meta-item i {
+    color: var(--bridge-life-content-primary);
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width);
+    gap: 40px;
+    padding: 80px 0;
+}
+
+/* Content Area */
+.course-content-area h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--bridge-life-content-secondary);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.course-content-area h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--bridge-life-content-border);
+}
+
+.course-description {
+    font-size: 1.1rem;
+    color: var(--bridge-life-content-text);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.curriculum-accordion {
+    margin-top: 30px;
+}
+
+.curriculum-item {
+    border: 1px solid var(--bridge-life-content-border);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.curriculum-header {
+    padding: 20px;
+    background: var(--bridge-life-content-bg-light);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: var(--bridge-life-content-secondary);
+    transition: background 0.3s;
+}
+
+.curriculum-header:hover {
+    background: #f1f5f9;
+}
+
+.curriculum-body {
+    padding: 20px;
+    display: none;
+    background: white;
+    border-top: 1px solid var(--bridge-life-content-border);
+}
+
+.curriculum-item.active .curriculum-body {
+    display: block;
+}
+
+.curriculum-item.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Sidebar */
+.course-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.sidebar-card {
+    background: white;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: var(--bridge-life-content-shadow-lg);
+    border: 1px solid var(--bridge-life-content-border);
+}
+
+.price-tag {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bridge-life-content-secondary);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.price-tag span {
+    font-size: 1rem;
+    color: var(--bridge-life-content-text-light);
+    font-weight: 400;
+}
+
+.sidebar-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar-features li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+}
+
+.sidebar-features li span:first-child {
+    color: var(--bridge-life-content-text-light);
+    font-weight: 500;
+}
+
+.sidebar-features li span:last-child {
+    color: var(--bridge-life-content-secondary);
+    font-weight: 700;
+}
+
+.enroll-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 18px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.guarantee-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #fff5f5;
+    border-radius: 12px;
+    color: var(--bridge-life-content-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+    .course-sidebar {
+        position: static;
+        order: -1;
+    }
+}

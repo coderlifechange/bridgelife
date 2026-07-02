@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Life - Animated Announcements</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="popupmodels.css">
+    <style>
+        /* Demo-specific layout styling */
+        .page-content {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .page-content h1 {
+            font-size: 3rem;
+            color: #0a1d37;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Section -->
+    <section class="announcement_bridge_container" aria-label="Latest Announcements" role="region">
+        <div class="announcement_bridge_track" id="announcement_bridge_track_id">
+            <!-- First Set of Items -->
+            <div class="announcement_bridge_item">
+                <i class="fa-solid fa-bullhorn"></i>
+                <a href="index.html" class="announcement_bridge_link">New Japan Batch Starts July 11 - Register Now! <span class="announcement_bridge_badge">New</span></a>
+            </div>
+            <div class="announcement_bridge_item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <a href="website/pp.html" class="announcement_bridge_link">Exclusive Seminar: Study in UK & Korea - Join the Waitlist</a>
+            </div>
+            <div class="announcement_bridge_item">
+                <i class="fa-solid fa-language"></i>
+                <a href="taketform.html" class="announcement_bridge_link">Special Discount on Japanese Language Batches this Month</a>
+            </div>
+            <div class="announcement_bridge_item">
+                <i class="fa-solid fa-circle-check"></i>
+                <a href="#" class="announcement_bridge_link">100% Visa Success Rate for our previous Korean EPS batch!</a>
+            </div>
+
+            <!-- Duplicate Set for Seamless Loop -->
+            <div class="announcement_bridge_item" aria-hidden="true">
+                <i class="fa-solid fa-bullhorn"></i>
+                <a href="index.html" class="announcement_bridge_link" tabindex="-1">New Japan Batch Starts July 11 - Register Now! <span class="announcement_bridge_badge">New</span></a>
+            </div>
+            <div class="announcement_bridge_item" aria-hidden="true">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <a href="website/pp.html" class="announcement_bridge_link" tabindex="-1">Exclusive Seminar: Study in UK & Korea - Join the Waitlist</a>
+            </div>
+            <div class="announcement_bridge_item" aria-hidden="true">
+                <i class="fa-solid fa-language"></i>
+                <a href="taketform.html" class="announcement_bridge_link" tabindex="-1">Special Discount on Japanese Language Batches this Month</a>
+            </div>
+            <div class="announcement_bridge_item" aria-hidden="true">
+                <i class="fa-solid fa-circle-check"></i>
+                <a href="#" class="announcement_bridge_link" tabindex="-1">100% Visa Success Rate for our previous Korean EPS batch!</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="page-content">
+        <h1>Bridge Life Global</h1>
+        <p>Explore our premium services and global education opportunities. Use the animated banner above to stay updated with our latest events and announcements.</p>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="popupmodels.js"></script>
+</body>
+</html>

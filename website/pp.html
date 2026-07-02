@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Life - Premium Support Portal</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../popupmodels.css">
+    
+    <style>
+        :root {
+            --bl-primary: #ed0d0d;
+            --bl-secondary: #0045A8;
+            --bl-dark: #061320;
+            --bl-glass: rgba(255, 255, 255, 0.08);
+            --bl-border: rgba(255, 255, 255, 0.12);
+        }
+
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #061320 0%, #0b2440 35%, #132f57 100%);
+            min-height: 100vh;
+        }
+
+        /* Background Decorations */
+        .bg-decoration-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bg-circle-anim {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.45;
+            animation: floatBg 10s infinite ease-in-out;
+        }
+
+        .circle-1-anim {
+            width: 400px;
+            height: 400px;
+            background: #00d2ff;
+            top: -100px;
+            left: -80px;
+        }
+
+        .circle-2-anim {
+            width: 350px;
+            height: 350px;
+            background: #6a5cff;
+            bottom: -120px;
+            right: -100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatBg {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        /* Hero Content */
+        .hero-section {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .hero-card {
+            width: 100%;
+            max-width: 1100px;
+            background: var(--bl-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--bl-border);
+            border-radius: 40px;
+            padding: clamp(40px, 8vw, 80px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            .hero-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(237, 13, 13, 0.15);
+            color: #ff4d4d;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(237, 13, 13, 0.3);
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            line-height: 1.1;
+            margin: 0 0 25px 0;
+        }
+
+        .hero-title span {
+            color: var(--bl-primary);
+            display: block;
+        }
+
+        .hero-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        @media (max-width: 992px) {
+            .hero-desc { margin: 0 auto 40px; }
+        }
+
+        /* Support Button Styling */
+        .bl-portal-trigger {
+            background: linear-gradient(135deg, #ed0d0d 0%, #a00707 100%);
+            color: white;
+            border: none;
+            padding: 22px 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(237, 13, 13, 0.4);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .bl-portal-trigger:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(237, 13, 13, 0.5);
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .visual-box {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+            border-radius: 30px;
+            border: 1px solid var(--bl-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-icon {
+            font-size: 120px;
+            color: var(--bl-primary);
+            filter: drop-shadow(0 0 30px rgba(237, 13, 13, 0.4));
+            animation: pulseIcon 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="hero-card" data-aos="zoom-in">
+            
+                <button class="bl-portal-trigger" id="blOpenSupportTrigger" data-aos="fade-up" data-aos-delay="800">
+                    <i class="fa-solid fa-headset"></i> Open Ticket System
+                </button>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Modal Components -->
+    <div class="bl-support-overlay" id="blPremiumSupportModal">
+        <div class="bl-support-box">
+            <div class="bl-support-header">
+                <div class="bl-support-header-left">
+                    <div class="bl-support-logo-box">
+                        <img src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png" alt="Logo" class="bl-support-logo-img">
+                    </div>
+                    <div class="bl-support-title-box">
+                        <h2>Bridge Life Consultancy</h2>
+                        <p>Premium Ticket Support System</p>
+                    </div>
+                </div>
+                <button class="bl-support-close-btn" id="blCloseSupportModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="bl-support-body">
+                <div class="bl-support-iframe-wrapper">
+                    <iframe class="bl-support-iframe" 
+                            src="https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1" 
+                            loading="lazy" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="bl-support-footer">
+                <p>© <span id="blSupportFooterYear"></span> <strong>Bridge Life Consultancy</strong>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="../popupmodels.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+</html>

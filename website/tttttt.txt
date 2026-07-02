@@ -1,0 +1,43 @@
+<link rel="manifest" href="/manifest.json">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+<link href="https://myfiles.bridgelife.com.np/myfiles/bridgelifeancpp/assets/css/atg-anc-mdl-pp-min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/gh/coderlifechange/bridgelife@main/hero.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<link href="https://myfiles.bridgelife.com.np/myfiles/bridgelifetktmdl/assets/css/bridgelife-tkt-mdl-min.css" rel="stylesheet">
+
+
+
+
+
+CSS
+<link href="https://myfiles.bridgelife.com.np/myfiles/bridgelifeancpp/assets/css/atg-anc-mdl-pp-min.css" rel="stylesheet">
+
+
+
+JS
+<script src="https://myfiles.bridgelife.com.np/myfiles/bridgelifeancpp/assets/js/atg-anc-mdl-pp-min.js"></script>
+
+
+<script src="https://myfiles.bridgelife.com.np/myfiles/bridgelifeancpp/assets/js/atg-anc-mdl-pp-min.js"></script>
+
+
+
+
+
+Modules
+
+<div class="modal-overlay-bridgelife-anc-pp" id="modal-bridgelife-anc-pp"><div class="modal-box-bridgelife-anc-pp"><img alt="" class="modal-img-bridgelife-anc-pp" id="img-bridgelife-anc-pp" src=""><div class="modal-dark-layer-bridgelife-anc-pp"></div><div class="close-bridgelife-anc-pp" id="close-bridgelife-anc-pp">×</div><div class="arrow-bridgelife-anc-pp prev-bridgelife-anc-pp" id="prev-bridgelife-anc-pp">❮</div><div class="arrow-bridgelife-anc-pp next-bridgelife-anc-pp" id="next-bridgelife-anc-pp">❯</div><div class="modal-content-bridgelife-anc-pp"><div class="title-bridgelife-anc-pp" id="title-bridgelife-anc-pp"></div><div class="slogan-bridgelife-anc-pp" id="slogan-bridgelife-anc-pp"></div><div class="desc-bridgelife-anc-pp" id="desc-bridgelife-anc-pp"></div><div class="datetime-bridgelife-anc-pp" id="datetime-bridgelife-anc-pp"></div><div class="countdown-bridgelife-anc-pp" id="countdown-bridgelife-anc-pp"></div><button class="btn-bridgelife-anc-pp" id="btn-bridgelife-anc-pp"></button></div></div></div>
+
+
+
+
+For Ticket Module
+
+<link href="https://myfiles.bridgelife.com.np/myfiles/bridgelifetktmdl/assets/css/bridgelife-tkt-mdl-min.css" rel="stylesheet">
+<script src="https://myfiles.bridgelife.com.np/myfiles/bridgelifetktmdl/assets/js/bridgelife-tkt-mdl-min.js"></script>

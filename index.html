@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Life - Global Education & Career Concierge</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="popupmodels.css">
+</head>
+<body class="bridge-life-content-body">
+
+    <!-- Header / Navigation -->
+    <header class="bridge-life-content-container">
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+            <div class="bridge-life-content-logo">
+                <img src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png" alt="Bridge Life Logo" style="width: 50px;">
+            </div>
+            <div class="bridge-life-content-nav-links" style="display: flex; gap: 30px; font-weight: 600; font-size: 0.9rem;">
+                <a href="#" style="text-decoration: none; color: var(--bridge-life-content-secondary);">Home</a>
+                <a href="taketform.html" style="text-decoration: none; color: var(--bridge-life-content-secondary);">About Us</a>
+                <a href="#" style="text-decoration: none; color: var(--bridge-life-content-secondary);">Services</a>
+                <a href="#" style="text-decoration: none; color: var(--bridge-life-content-secondary);">Destinations</a>
+                <a href="#" style="text-decoration: none; color: var(--bridge-life-content-secondary);">Contact</a>
+            </div>
+            <a href="#" class="bridge-life-content-btn bridge-life-content-btn-primary" id="blOpenSupportTrigger">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="bridge-life-content-hero">
+        <div class="bridge-life-content-container">
+            <div class="bridge-life-content-hero-grid">
+                <!-- Hero Left: Content -->
+                <div class="bridge-life-content-hero-content">
+                    <div class="bridge-life-content-badge">
+                        <span>Trusted by 5000+ Students Worldwide</span>
+                    </div>
+                    <h1 class="bridge-life-content-hero-title">
+                        Your Bridge to a <br>
+                        <span class="bridge-life-content-highlight">Global Future</span>
+                    </h1>
+                    <p class="bridge-life-content-hero-description">
+                        Expert counseling for Japan, Korea, and the UK. We provide end-to-end support for your education and career journey abroad with premium visa assistance.
+                    </p>
+                    <div class="bridge-life-content-hero-actions">
+                        <button class="bridge-life-content-btn bridge-life-content-btn-primary blOpenSupportTrigger" data-subject="General Inquiry from Homepage">
+                            Apply Now <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <a href="searvices_courses.html" class="bridge-life-content-btn bridge-life-content-btn-outline">
+                            Our Services <i class="fa-solid fa-layer-group"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Destinations Bar -->
+                    <div class="bridge-life-content-top-destinations">
+                        <div class="bridge-life-content-destinations-header">
+                            <div class="bridge-life-content-plane-wrapper">
+                                <i class="fa-solid fa-plane-up bridge-life-content-plane-icon"></i>
+                            </div>
+                            Top Destinations
+                        </div>
+                        <div class="bridge-life-content-destinations-list">
+                            <div class="bridge-life-content-destination-item">
+                                <img src="https://flagcdn.com/w80/jp.png" alt="Japan">
+                                <span>Japan</span>
+                            </div>
+                            <div class="bridge-life-content-destination-item">
+                                <img src="https://flagcdn.com/w80/kr.png" alt="South Korea">
+                                <span>S. Korea</span>
+                            </div>
+                            <div class="bridge-life-content-destination-item">
+                                <img src="https://flagcdn.com/w80/gb.png" alt="United Kingdom">
+                                <span>UK</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Visuals -->
+                <div class="bridge-life-content-hero-visual">
+                    <div class="bridge-life-content-visual-container">
+                        <div class="bridge-life-content-visual-bg-circle"></div>
+                        <img src="https://www.bridgelife.com.np/storage/bridgelife-services/korean-language-720x404.jpg" alt="Students" class="bridge-life-content-students-img" style="border-radius: 30px; object-fit: cover;">
+                        <div class="bridge-life-content-plane-visual">
+                            <i class="fa-solid fa-plane-up fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Announcement Modal (Slider) -->
+    <div class="modal-overlay-bridgelife-anc-pp" id="modal-bridgelife-anc-pp">
+        <div class="modal-box-bridgelife-anc-pp">
+            <div class="close-bridgelife-anc-pp" id="close-bridgelife-anc-pp">×</div>
+
+            <div class="modal-img-wrapper-bridgelife-anc-pp">
+                <img alt="Bridge Life Event" class="modal-img-bridgelife-anc-pp" id="img-bridgelife-anc-pp" src="">
+                <div class="modal-dark-layer-bridgelife-anc-pp"></div>
+                <div class="arrow-bridgelife-anc-pp prev-bridgelife-anc-pp" id="prev-bridgelife-anc-pp">❮</div>
+                <div class="arrow-bridgelife-anc-pp next-bridgelife-anc-pp" id="next-bridgelife-anc-pp">❯</div>
+            </div>
+
+            <div class="modal-content-bridgelife-anc-pp">
+                <div class="slogan-bridgelife-anc-pp" id="slogan-bridgelife-anc-pp"></div>
+                <div class="title-bridgelife-anc-pp" id="title-bridgelife-anc-pp"></div>
+                <div class="desc-bridgelife-anc-pp" id="desc-bridgelife-anc-pp"></div>
+                
+                <div class="datetime-bridgelife-anc-pp" id="datetime-bridgelife-anc-pp"></div>
+                
+                <div class="countdown-bridgelife-anc-pp" id="countdown-bridgelife-anc-pp"></div>
+                
+                <button class="open-ticket-btn-bridgelife" id="open-ticket-btn-bridgelife"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticket Modal (Inquiry Form) -->
+    <div class="modal-overlay-bridgelife-tkt-mdl" id="ticketModalBridgelifeTktMdl">
+        <div class="modal-box-bridgelife-tkt-mdl">
+            <div class="modal-header-bridgelife-tkt-mdl">
+                <div class="header-left-bridgelife-tkt-mdl">
+                    <div class="logo-box-bridgelife-tkt-mdl">
+                        <img src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png" alt="Logo" class="logo-img-bridgelife-tkt-mdl">
+                    </div>
+                    <div class="title-box-bridgelife-tkt-mdl">
+                        <h2>Bridge Life Consultancy</h2>
+                        <p>Premium Ticket Support System</p>
+                    </div>
+                </div>
+                <button class="close-btn-bridgelife-tkt-mdl" id="closeModalBridgelifeTktMdl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body-bridgelife-tkt-mdl">
+                <div class="iframe-wrapper-bridgelife-tkt-mdl">
+                    <iframe class="ticket-frame-bridgelife-tkt-mdl" 
+                            src="https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1" 
+                            loading="lazy" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="modal-footer-bridgelife-tkt-mdl">
+                <p>© <span id="footerYearBridgelifeTktMdl"></span> <strong>Bridge Life Consultancy</strong>. All Rights Reserved. Powered By Sektall (ATG HOST).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Decoration for Ticket Modal -->
+    <div class="bg-decoration circle-1"></div>
+    <div class="bg-decoration circle-2"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="popupmodels.js"></script>
+</body>
+</html>

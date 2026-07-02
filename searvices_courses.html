@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Life - Services & Courses</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="popupmodels.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body class="bridge-life-content-body">
+
+    <!-- Announcement Section -->
+    <section class="announcement_bridge_container" aria-label="Latest Announcements" role="region">
+        <div class="announcement_bridge_track" id="announcement_bridge_track_id">
+            <!-- First Set of Items -->
+            <div class="announcement_bridge_item">
+                <i class="fa-solid fa-bullhorn"></i>
+                <a href="index.html" class="announcement_bridge_link">New Japan Batch Starts July 11 - Register Now! <span class="announcement_bridge_badge">New</span></a>
+            </div>
+            <div class="announcement_bridge_item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <a href="website/pp.html" class="announcement_bridge_link">Exclusive Seminar: Study in UK & Korea - Join the Waitlist</a>
+            </div>
+            <div class="announcement_bridge_item">
+                <i class="fa-solid fa-language"></i>
+                <a href="taketform.html" class="announcement_bridge_link">Special Discount on Japanese Language Batches this Month</a>
+            </div>
+
+            <!-- Duplicate Set for Seamless Loop -->
+            <div class="announcement_bridge_item" aria-hidden="true">
+                <i class="fa-solid fa-bullhorn"></i>
+                <a href="index.html" class="announcement_bridge_link" tabindex="-1">New Japan Batch Starts July 11 - Register Now! <span class="announcement_bridge_badge">New</span></a>
+            </div>
+            <div class="announcement_bridge_item" aria-hidden="true">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <a href="website/pp.html" class="announcement_bridge_link" tabindex="-1">Exclusive Seminar: Study in UK & Korea - Join the Waitlist</a>
+            </div>
+            <div class="announcement_bridge_item" aria-hidden="true">
+                <i class="fa-solid fa-language"></i>
+                <a href="taketform.html" class="announcement_bridge_link" tabindex="-1">Special Discount on Japanese Language Batches this Month</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header / Navigation -->
+    <header class="bridge-life-content-container">
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+            <div class="bridge-life-content-logo">
+                <a href="index.html"><img src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png" alt="Bridge Life Logo" style="width: 50px;"></a>
+            </div>
+            <div class="bridge-life-content-nav-links" style="display: flex; gap: 30px; font-weight: 600; font-size: 0.9rem;">
+                <a href="index.html" style="text-decoration: none; color: var(--bridge-life-content-secondary);">Home</a>
+                <a href="#" style="text-decoration: none; color: var(--bridge-life-content-secondary);">About Us</a>
+                <a href="searvices_courses.html" style="text-decoration: none; color: var(--bridge-life-content-primary);">Services</a>
+                <a href="#" style="text-decoration: none; color: var(--bridge-life-content-secondary);">Destinations</a>
+                <a href="#" style="text-decoration: none; color: var(--bridge-life-content-secondary);">Contact</a>
+            </div>
+            <a href="#" class="bridge-life-content-btn bridge-life-content-btn-primary" id="blOpenSupportTrigger">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="bridge-life-content-container">
+            <h1>Our Elite Services</h1>
+            <p>Providing end-to-end guidance and premium language training for your global success.</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section-padding">
+        <div class="bridge-life-content-container">
+            <div class="section-title">
+                <h2>Expert Counseling</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-user-tie service-icon"></i>
+                    <h3>Career Counseling</h3>
+                    <p>Personalized guidance to help you choose the right path for your education and future career in Japan, Korea, or the UK.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-file-signature service-icon"></i>
+                    <h3>Documentation</h3>
+                    <p>Hassle-free documentation support. We ensure every detail of your application meets international standards.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-passport service-icon"></i>
+                    <h3>Visa Assistance</h3>
+                    <p>Expert support throughout the visa application process, boasting a high success rate for all our students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section-padding courses-section">
+        <div class="bridge-life-content-container">
+            <div class="section-title">
+                <h2>Language Programs</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-05-22-at-34410-pm.jpeg" alt="Japanese Language">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-badge">Japan Focused</span>
+                        <h3>Japanese Language</h3>
+                        <p>Intensive batches from N5 to N3 levels with native-level instructors.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <a href="japanese_course.html" class="course-btn" style="margin-top: 0; flex: 1;">View Details</a>
+                            <a href="#" class="course-btn blOpenSupportTrigger" data-subject="Japanese Language Batch" style="margin-top: 0; flex: 1; background: var(--bridge-life-content-primary);">Join Batch</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://www.bridgelife.com.np/storage/bridgelife-services/korean-language-720x404.jpg" alt="Korean Language">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-badge">EPS TOPIK</span>
+                        <h3>Korean Language</h3>
+                        <p>Comprehensive EPS-TOPIK training designed for maximum exam success.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <a href="korean_course.html" class="course-btn" style="margin-top: 0; flex: 1;">View Details</a>
+                            <a href="#" class="course-btn blOpenSupportTrigger" data-subject="Korean Language Batch" style="margin-top: 0; flex: 1; background: var(--bridge-life-content-primary);">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://www.bridgelife.com.np/storage/popup-modal-announcements/whatsapp-image-2026-06-02-at-84149-am.jpeg" alt="IELTS/PTE">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-badge">Study in UK</span>
+                        <h3>IELTS & PTE</h3>
+                        <p>Result-oriented preparation with weekly mock tests and personalized feedback.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <a href="ielts_pte_course.html" class="course-btn" style="margin-top: 0; flex: 1;">View Details</a>
+                            <a href="#" class="course-btn blOpenSupportTrigger" data-subject="IELTS/PTE Preparation" style="margin-top: 0; flex: 1; background: var(--bridge-life-content-primary);">Book Test</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="bridge-life-content-container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Contact our counselors today for a free consultation session.</p>
+                <button class="bridge-life-content-btn bridge-life-content-btn-primary cta-btn blOpenSupportTrigger">
+                    Contact Us Now <i class="fa-solid fa-phone"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Modal (Inquiry Form) -->
+    <div class="bl-support-overlay" id="blPremiumSupportModal">
+        <div class="bl-support-box">
+            <div class="bl-support-header">
+                <div class="bl-support-header-left">
+                    <div class="bl-support-logo-box">
+                        <img src="https://bridgelife.com.np/storage/bridgelife-logo/bridgelife-logo-60x60.png" alt="Logo" class="bl-support-logo-img">
+                    </div>
+                    <div class="bl-support-title-box">
+                        <h2>Bridge Life Consultancy</h2>
+                        <p>Premium Ticket Support System</p>
+                    </div>
+                </div>
+                <button class="bl-support-close-btn" id="blCloseSupportModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="bl-support-body">
+                <div class="bl-support-iframe-wrapper">
+                    <iframe class="bl-support-iframe" 
+                            src="https://mymail.bridgelife.com.np/forms/ticket?styled=1&with_logo=1" 
+                            loading="lazy" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="bl-support-footer">
+                <p>© <span id="blSupportFooterYear"></span> <strong>Bridge Life Consultancy</strong>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="popupmodels.js"></script>
+</body>
+</html>

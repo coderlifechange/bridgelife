@@ -1,0 +1,183 @@
+/* Services & Courses Page Styles */
+.services-hero {
+    background: linear-gradient(rgba(10, 29, 55, 0.9), rgba(10, 29, 55, 0.9)), url('https://www.bridgelife.com.np/storage/bridgelife-services/korean-language-720x404.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.services-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+}
+
+.services-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--bridge-life-content-secondary);
+    margin-bottom: 15px;
+}
+
+.section-title .underline {
+    width: 80px;
+    height: 4px;
+    background: var(--bridge-life-content-primary);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--bridge-life-content-shadow-md);
+    transition: var(--bridge-life-content-transition);
+    border: 1px solid var(--bridge-life-content-border);
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--bridge-life-content-shadow-lg);
+    border-color: var(--bridge-life-content-primary);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--bridge-life-content-primary);
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--bridge-life-content-secondary);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--bridge-life-content-text);
+    font-size: 0.95rem;
+}
+
+/* Courses Section */
+.courses-section {
+    background-color: var(--bridge-life-content-bg-light);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--bridge-life-content-shadow-md);
+    transition: var(--bridge-life-content-transition);
+}
+
+.course-card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--bridge-life-content-shadow-lg);
+}
+
+.course-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-img img {
+    transform: scale(1.1);
+}
+
+.course-content {
+    padding: 25px;
+}
+
+.course-content h3 {
+    font-size: 1.3rem;
+    color: var(--bridge-life-content-secondary);
+    margin-bottom: 10px;
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(237, 13, 13, 0.1);
+    color: var(--bridge-life-content-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.course-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background: var(--bridge-life-content-secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.course-btn:hover {
+    background: var(--bridge-life-content-primary);
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--bridge-life-content-secondary);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.cta-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    margin-top: 30px;
+}
